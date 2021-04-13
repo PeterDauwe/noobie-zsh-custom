@@ -1,1 +1,1 @@
-** noobie-zsh **
+** noobie-zsh-custom **
