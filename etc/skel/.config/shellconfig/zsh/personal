@@ -2,13 +2,7 @@
 # ~/.zsh
 #
 
-
-
 (cat "$HOME/.cache/wal/sequences" &)
-
-alias gc="git clone"
-
-alias gitpull="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
 
 alias configbup='cp -Rf ~/.config ~/config-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
@@ -18,23 +12,9 @@ alias del='sudo pacman -R '
 
 alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg' 
 
-alias test="sddm-greeter --test-mode --theme /usr/share/sddm/themes/noobie"
+alias sddmtest="sddm-greeter --test-mode --theme /usr/share/sddm/themes/noobie"
 
 alias orph='sudo pacman -Rns $(pacman -Qtdq)'
 
-
-alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-
-
-
-gitpush() {
-    git pull
-    git add -u
-    git add --all .
-    input="update"
-    git commit -m "$input"
-    git push --force -u origin master
-}
-
-alias gp=gitpush
+alias rc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 
