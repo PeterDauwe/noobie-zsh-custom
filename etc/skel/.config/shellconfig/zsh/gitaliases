@@ -1,0 +1,10 @@
+gitpush() {
+    git pull
+    git add -u
+    git add --all .
+    input="update"
+    git commit -m "$input"
+    git push --force -u origin master
+}
+
+alias gp=gitpush
